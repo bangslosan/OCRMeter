@@ -1,0 +1,35 @@
+<% if(files.length>0){ %>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Original</th>
+			<% for(var i=0;i
+			<stepsCount;i++) { %>
+				<th></th>
+				<% } %>
+				<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% files.forEach(function(f){ %>
+		<tr>
+			<td><img class="thumbnail" src="ocrimages/<%= f.file %>" /></td>
+			<% for(var i=0;i
+			<stepsCount;i++) { %>
+				<% if (f.file) { %>
+				<td>
+				<img class="thumbnail" src="ocrimages/<%= f.name %>_<%= i %>.<%= f.extension %>" /></td>
+				<% } else { %>
+				<td></td>
+				<% } %>
+				<% } %>
+				<td><a href="#results" class="btn btn-link values" file-name="<%= f.name %>" file-extension="<%= f.extension %>" file-steps="<%= stepsCount %>">Results</a></td>
+		</tr>
+		<% }) %>
+	</tbody>
+</table>
+<% }else{ %>
+<div class="jumbotron">
+	<h3>Upload folder is empty</h3>
+</div>
+<% } %> 

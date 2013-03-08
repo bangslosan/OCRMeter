@@ -1,0 +1,93 @@
+<% include header.ejs %>
+
+<div id="wrap">
+	<!-- Begin page content -->
+	<div class="container">
+		<div class="jumbotron"></div>
+		<ul id="myTab" class="nav nav-tabs">
+			<li>
+				<a href="#status" data-toggle="tab">Status</a>
+			</li>
+			<li>
+				<a href="#config" data-toggle="tab">Config</a>
+			</li>
+			<li>
+				<a href="#debug" data-toggle="tab">Debug</a>
+			</li>
+			<li>
+				<a href="#log" data-toggle="tab">Logs</a>
+			</li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane active" id="status">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<span class="brand" href="#">Status:</span>
+						<a id="statusReload" class="btn btn-primary btn-small" href="#/Reload status" data-loading-text="Reloading..." ><i class="icon-white icon-refresh"></i> Reload</a>
+					</div>
+				</div>
+				<div id="statuses">
+				</div>
+			</div>
+
+			<div class="tab-pane" id="config">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<span class="brand" href="#">Config:</span>
+						<a id="configReload" class="btn btn-primary btn-small" href="#/Reload config" data-loading-text="Reloading..." ><i class="icon-white icon-refresh"></i> Reload</a>
+						<a id="configApply" class="btn btn-success btn-small" href="#/Apply config" data-loading-text="Applying..." ><i class="icon-white icon-ok"></i> Apply config</a>
+					</div>
+				</div>
+				<div id="configs">
+				</div>
+			</div>
+
+			<div class="tab-pane" id="debug">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<span class="brand" href="#">Debug:</span>
+						<a id="debugLoadImages" class="btn btn-primary btn-small" href="#/Refresh" data-loading-text="Loading..." ><i class="icon-white icon-refresh"></i> Refresh</a>
+						<a id="debugTruncate" class="btn btn-danger btn-small" href="#/Truncate upload folder" data-loading-text="Deleting..." ><i class="icon-white icon-trash"></i> Truncate temp folder</a>
+					</div>
+				</div>
+				<div id="files">
+				</div>
+			</div>
+
+			<div class="tab-pane" id="log">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<span class="brand" href="#">Logs:</span>
+						<a id="logLoadAccess" class="btn btn-small" href="#/Load access.log" data-loading-text="Loading..." ><i class="icon-list-alt"></i> access.log</a>
+						<a id="logLoadApp" class="btn btn-small" href="#/Load app.log" data-loading-text="Loading..." ><i class="icon-list-alt"></i> app.log</a>
+					</div>
+				</div>
+				<div id="logs">
+				</div>
+			</div>
+			<!-- End page content -->
+		</div>
+	</div>
+	<div id="push"></div>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"></h3>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+<div id="footer">
+	<div class="container">
+		<p class="muted credit">
+			&copy; <a href="http://ejci.net">Miroslav Magda</a> 2012
+		</p>
+	</div>
+</div>
+
+<% include footer.ejs %>

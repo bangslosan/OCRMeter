@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
+		<title>500 - Server error</title>
+		<meta name="description" content="404 - Not found">
+		<meta name="author" content="Miroslav Magda">
+		<style>
+			html {
+				height: 100%;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				background: #444;
+				background-image: -moz-linear-gradient(right top,#444 0%,#555 100%);
+				background-image: -webkit-gradient(linear,left top, right bottom,color-stop(0, #444),color-stop(1, #555));
+				background: -webkit-linear-gradient(left top, #444 0%, #555 100%);
+				background: -o-linear-gradient(left top, #444 0%, #555 100%);
+				background: -ms-linear-gradient(left top, #444 0%, #555 100%);
+				background: linear-gradient(left top, #444 0%, #555 100%);
+			}
+			.content {
+				font: 30px calibri, arial, verdana, sans-serif;
+				text-align: center;
+				color: #eee;
+				text-shadow: 1px 1px #333;
+				line-height: 40px;
+				position: fixed;
+				width: 400px;
+				height: 40px;
+				top: 50%;
+				left: 50%;
+				margin-top: -20px;
+				margin-left: -200px;
+			}
+			.content.error404 {
+			}
+			.content.error500 {
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content error500">
+			You broke it :(
+		</div>
+	</body>
+</html>
+

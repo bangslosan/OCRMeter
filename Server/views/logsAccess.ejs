@@ -1,0 +1,24 @@
+<% if(logs.length>0){ %>
+<h3>Access log:</h3>
+<table class="table table-condensed table-hover">
+	<thead>
+		<tr>
+			<th style="width: 120px;">Time</th>
+			<th>Message</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% logs.forEach(function(l){ %>
+		<tr>
+			<td><small><%= l.date %> <%= l.time %></small></td>
+			<td><small><%= l.message %></small></td>
+		</tr>
+		<% }) %>
+	</tbody>
+</table>
+<% }else{ %>
+<div class="jumbotron">
+	<h3>Access log: Something went wrong...</h3>
+</div>
+<% } %>
+ 

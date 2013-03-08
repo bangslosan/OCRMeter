@@ -1,0 +1,9 @@
+				<div class="alert alert-info">
+					<strong>Server version: </strong> <%= server.version %>
+					<br />
+				</div>
+				<% if(server.debug){ %>
+				<div class="alert">
+					<strong>Warning!</strong> Debug modes is on.
+				</div>
+				<% } %>

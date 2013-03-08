@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>OCRMeter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			html, body {
+				height: 100%;
+			}
+
+			.wrap {
+				min-height: 100%;
+				height: auto !important;
+				height: 100%;
+				margin: 0 auto -60px;
+			}
+
+			.jumbotron {
+				margin: 60px 0;
+				text-align: center;
+			}
+			.jumbotron h1 {
+				font-size: 72px;
+				line-height: 1;
+			}
+			.jumbotron .btn {
+				font-size: 21px;
+				padding: 14px 24px;
+			}
+
+			@media (max-width: 767px) {
+				#footer {
+					margin-left: -20px;
+					margin-right: -20px;
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+			}
+			.container {
+				width: auto;
+				max-width: 680px;
+			}
+			.container .credit {
+				margin: 20px 0;
+			}
+
+			/* Carousel base class */
+			.carousel {
+				margin-bottom: 60px;
+			}
+
+			.carousel .container {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+
+			.carousel-control {
+				background-color: #ccc;
+				text-shadow: 0 1px 1px rgba(0,0,0,.4);
+			}
+
+			.carousel .item {
+				height: 400px;
+			}
+			.carousel img {
+				/*min-width: 100%;*/
+				margin: 0 auto 0;
+				height: 400px;
+			}
+
+			.carousel-caption {
+				background-color: rgba(255,255,255,.4);
+				position: static;
+				max-width: 680px;
+				padding: 0 20px;
+				margin-bottom: 0;
+			}
+			.carousel-caption h1, .carousel-caption .lead {
+				margin: 0;
+				line-height: 1.25;
+				color: #111;
+				text-shadow: 0 1px 1px rgba(255,255,255,.6);
+			}
+			.carousel-caption .btn {
+				margin-top: 10px;
+			}
+			.license {
+				font-size: 10px;
+			}
+			.thumbnailimg {
+				height: 40px;
+				width: 200px;
+			}
+			.bigText {
+				font-size: 40px;
+				padding-top: 10px;
+			}
+			pre code {
+				font-family: monaco, monospace;
+				font-size: .8em;
+			}
+
+			code .comment {
+				color: #888
+			}
+			code .init {
+				color: #2F6FAD
+			}
+			code .string {
+				color: #5890AD
+			}
+			code .keyword {
+				color: #8A6343
+			}
+			code .number {
+				color: #2F6FAD
+			}
+		</style>
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<div class="wrap" id="Home">
+			<!-- Begin page content -->
+			<div class="container">
+				<div class="masthead">
+					<ul class="nav nav-pills pull-right">
+						<li>
+							<a href="#Home">Home</a>
+						</li>
+						<li>
+							<a href="#Requirements">Requirements</a>
+						</li>
+						<li>
+							<a href="#Tests">Tests</a>
+						</li>
+						<li>
+							<a href="#Usage">Usage</a>
+						</li>
+						<li>
+							<a href="#License">License</a>
+						</li>
+						<li>
+							<a href="mailto:magda.miroslav@gmail.com">Contact</a>
+						</li>
+					</ul>
+					<h3 class="muted">OCRMeter</h3>
+				</div>
+				<hr>
+				<p class="lead">
+					Digits parsing mobile solution for getting values from gas, electricity (...) meters based on <a href="http://www.appcelerator.com" >Titanium Appcelerator</a>, <a href="http://nodejs.org/">node.js</a>, <a href="http://code.google.com/p/tesseract-ocr/">tesseract-ocr</a> and <a href="http://www.imagemagick.org/">imagemagick</a>.
+				</p>
+
+				<div id="carousel" class="carousel slide" data-interval="2000">
+					<!-- Carousel items -->
+					<div class="carousel-inner">
+						<div class="active item">
+							<img src="img/iphone.png" alt="">
+							<div class="container">
+								<div class="carousel-caption">
+									<h1>Mobile client</h1>
+									<p class="lead">
+										Titanium Appcelerator integration
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<img src="img/admin_status.png" alt="">
+							<div class="container">
+								<div class="carousel-caption">
+									<h1>Server Managment</h1>
+									<p class="lead">
+										Remote server managment &amp; configuration
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<img src="img/admin_config.png" alt="">
+							<div class="container">
+								<div class="carousel-caption">
+									<h1>OCR configuration</h1>
+									<p class="lead">
+										Remote server OCR configuration
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<img src="img/admin_logs.png" alt="">
+							<div class="container">
+								<div class="carousel-caption">
+									<h1>Log managment</h1>
+									<p class="lead">
+										Server application &amp; access logs managment
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<img src="img/admin_debug.png" alt="">
+							<div class="container">
+								<div class="carousel-caption">
+									<h1>Server debuger</h1>
+									<p class="lead">
+										Remote OCR debuging
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Carousel nav -->
+					<a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+					<a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+				</div>
+				<div class="jumbotron">
+					<a class="btn btn-large btn-inverse" href="https://bitbucket.org/miroslavmagda/ocrmeter">Get source code</a>
+				</div>
+				<!--div class="row-fluid marketing">
+				<div class="span6">
+				<h4>Mobile client</h4>
+				<p>
+				Simple and easy to use mobile client for value scanning.
+				</p>
+
+				<h4>Iteractive server managment</h4>
+				<p>
+				Interactive and easy to use server managment console.
+				</p>
+
+				</div>
+
+				<div class="span6">
+				<h4>Appcelerator Titanium</h4>
+				<p>
+				Simple Titanium Appcelerator integration. Titanium common.js module included.
+				</p>
+
+				<h4>Server based on node.js</h4>
+				<p>
+				Scalable and robust server technology prepared to process large ammount of requests.
+				</p>
+
+				</div>
+				</div-->
+				<section id="Requirements">
+					<hr>
+					<h3>Requirements</h3>
+					<ul>
+						<li>
+							tesseract-ocr v3.01
+						</li>
+						<li>
+							ImageMagick v6.7.9-9
+						</li>
+						<li>
+							node.js v0.8.11
+						</li>
+						<ul>
+							<li>
+								connect-flash v0.1.0
+							</li>
+							<li>
+								ejs v0.8.3
+							</li>
+							<li>
+								express v3.0.2
+							</li>
+							<li>
+								imagemagick v0.1.3
+							</li>
+							<li>
+								nconf v0.6.5
+							</li>
+							<li>
+								passport v0.1.15
+							</li>
+							<li>
+								passport-local v0.1.6
+							</li>
+							<li>
+								winston v0.6.2
+							</li>
+						</ul>
+					</ul>
+				</section>
+				<section id="Tests">
+					<hr>
+					<h3>Tests</h3>
+					<p>
+						Real pictures taken with iPhone 4 and processed by OCRMeter server application.
+					</p>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Image</th>
+								<th>OCR Value</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/0fc2tdzehfr.png"></td><td>
+								<p class="bigText">
+									5411.2
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/0z2ggki6bt9.png"></td><td>
+								<p class="bigText">
+									-
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/1rgd5is5rk9.png"></td><td>
+								<p class="bigText">
+									6893
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/4w8lm2yy14i.png"></td><td>
+								<p class="bigText">
+									18393.3
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/5p3k75sif6r.png"></td><td>
+								<p class="bigText">
+									160999.3
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/8jrlvdkj4i.png"></td><td>
+								<p class="bigText">
+									8722.3
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/9du1f758kt9.png"></td><td>
+								<p class="bigText">
+									5475.2
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/53xeupfzuxr.png"></td><td>
+								<p class="bigText">
+									311100
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/66kexko6r.png"></td><td>
+								<p class="bigText">
+									5472
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/czag91z6w29.png"></td><td>
+								<p class="bigText">
+									5955.1
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/dpusoklc8fr.png"></td><td>
+								<p class="bigText">
+									71.1
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/effb9be29.png"></td><td>
+								<p class="bigText">
+									-
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/eytqtfn7b9.png"></td><td>
+								<p class="bigText">
+									5944.2
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/g0z6zfzjjor.png"></td><td>
+								<p class="bigText">
+									5158.5
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/h8xyg7ousor.png"></td><td>
+								<p class="bigText">
+									5948.5
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/ix6javy4x6r.png"></td><td>
+								<p class="bigText">
+									305541.1
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/lq75d0zr529.png"></td><td>
+								<p class="bigText">
+									9158.5
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/o03vhnwb3xr.png"></td><td>
+								<p class="bigText">
+									511552.3
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/pcayca0pb9.png"></td><td>
+								<p class="bigText">
+									742100
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/wdgjzhkhuxr.png"></td><td>
+								<p class="bigText">
+									5472
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/xg40hf72e29.png"></td><td>
+								<p class="bigText">
+									987210.1
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/xvlx4xi529.png"></td><td>
+								<p class="bigText">
+									999677.1
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/ygcfg4g3nmi.png"></td><td>
+								<p class="bigText">
+									119515.1
+								</p></td><td></td>
+							</tr>
+							<tr>
+								<td style="width: 220px;"><img class="thumbnailimg" src="img/examples/zdkasymygb9.png"></td><td>
+								<p class="bigText">
+									51157.1
+								</p></td><td></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section id="Usage">
+					<hr>
+					<h3>Usage</h3>
+					<h4>Titanium Appcelerator usage</h4>
+					<pre class="js"><code>var OCRparse = require('lib/OcrParse');
+var ocr = new OCRparse();
+//get picture and value
+ocr.getValue(function(image, value, number) {
+				imageView.image = image;//image blob
+				valueLabel.text = number;//parsed number eg. 1234.5
+				valueLabel._value = value;//parsed value string eg. 12345
+			});
+/*Update value only*/
+ocr.updateValue(valueLabel._value, function(value, number) {
+				valueLabel.text = number;//parsed number eg. 1234.5
+				valueLabel._value = value;//parsed value string eg. 12345
+			   });</code></pre>
+					<h4>Server API</h4>
+					<h5>Get server status</h5>
+					<pre><code>GET http://host:port/api/getStatus</code></pre>
+					<b>Output params:</b>
+					<pre class="js"><code>{
+  "version": "0.9.0",
+  "debug": "on",
+  "status": "running"
+}</code></pre>					
+					<h5>Get API version</h5>
+					<pre><code>GET http://host:port/api/getVersion</code></pre>
+					<b>Output params:</b>
+					<pre class="js"><code>{
+  "version": "0.9.0"
+}</code></pre>					
+					<h5>Get value from picture</h5>
+					<pre><code>POST http://host:port/api/parseValue</code></pre>
+					<b>Input params:</b>
+					<ul>
+						<li>image - <i>image file</i></li>
+						<li>decimalPlaces - <i>decimal places of value (default 1)</i></li>
+						<li>valueLength - <i>digits count (default 7)</i></li>
+					</ul>
+					<b>Output params:</b>
+					<pre class="js"><code>{
+	status: "done",
+	ocrValues: [
+		"0064750",
+		"0054759",
+		"9054754",
+		"9954754",
+		"9954754",
+		"9054754"
+	],
+	value: "9054754",
+	number: 905475.4
+}</code></pre>					
+
+					</section>
+					<section id="License">
+						<hr>
+						<h3>License</h3>
+						<small>
+							<p>
+								Copyright (c) 2012 Miroslav Magda
+								<br />
+								All rights reserved.
+							</p>
+							<p>
+								Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+							</p>
+							<ul>
+								<li>
+									Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+								</li>
+								<li>
+									Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+								</li>
+								<li>
+									Any redistribution, use, or modification is done solely for personal benefit and not for any commercial purpose or for monetary gain
+								</li>
+							</ul>
+							<p>
+								THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+							</p> </small>
+					</section>
+					<hr>
+
+					<div class="footer">
+						<p>
+							&copy; <a href="http://ejci.net">Miroslav Magda</a> 2012
+						</p>
+					</div>
+			</div>
+		</div>
+
+		<!-- /container -->
+		<!-- Le javascript
+		================================================== -->
+		<!--script src="http://code.jquery.com/jquery-latest.js"></script-->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+function highlight(js) {
+return js
+.replace(/</g, '&lt;')
+.replace(/>/g, '&gt;')
+.replace(/\/\/(.*)/gm, '<span class="comment">//$1</span>')
+.replace(/('.*?')/gm, '<span class="string">$1</span>')
+.replace(/(\d+\.\d+)/gm, '<span class="number">$1</span>')
+.replace(/(\d+)/gm, '<span class="number">$1</span>')
+.replace(/\bnew *(\w+)/gm, '<span class="keyword">new</span> <span class="init">$1</span>')
+.replace(/\b(function|new|throw|return|var|if|else)\b/gm, '<span class="keyword">$1</span>')
+}
+$(function() {
+$('pre.js code').each(function(){
+$(this).html(highlight($(this).text()));
+});
+});
+
+		</script>
+	</body>
+</html>

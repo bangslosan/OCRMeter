@@ -1,0 +1,220 @@
+{
+    "ocr": {
+        "config": {
+            "valueLength": 7,
+            "decimalPlaces": 1
+        },
+        "steps": [
+            [
+                {
+                    "arg": ["-modulate", "100,100"],
+                    "valid": true,
+                    "description": "brightness 0% => original"
+                }, {
+                    "arg": ["-auto-level"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-median", "3", "-gaussian-blur", "2x0.5"],
+                    "valid": true,
+                    "description": "odstranenie odlesku"
+                }, {
+                    "arg": ["-threshold", "20000"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-colorspace", "Gray"],
+                    "valid": true,
+                    "description": "sede odtiene"
+                }, {
+                    "arg": ["-negate"],
+                    "valid": true,
+                    "description": "negativ"
+                }, {
+                    "arg": ["-median", "6"],
+                    "valid": true,
+                    "description": "vyhladeni median"
+                }, {
+                    "arg": ["-colorspace", "gray", "-density", "300", "-sigmoidal-contrast", "3,0%", "-depth", "8"],
+                    "valid": true,
+                    "description": "finalna uprava pre OCR"
+                }
+            ],
+            [
+                {
+                    "arg": ["-modulate", "110,90"],
+                    "valid": true,
+                    "description": "brightness 0% => original"
+                }, {
+                    "arg": ["-auto-level"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-median", "3", "-gaussian-blur", "2x0.5"],
+                    "valid": true,
+                    "description": "odstranenie odlesku"
+                }, {
+                    "arg": ["-threshold", "20000"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-colorspace", "Gray"],
+                    "valid": true,
+                    "description": "sede odtiene"
+                }, {
+                    "arg": ["-negate"],
+                    "valid": true,
+                    "description": "negativ"
+                }, {
+                    "arg": ["-median", "6"],
+                    "valid": true,
+                    "description": "vyhladeni median"
+                }, {
+                    "arg": ["-colorspace", "gray", "-density", "300", "-sigmoidal-contrast", "3,0%", "-depth", "8"],
+                    "valid": true,
+                    "description": "finalna uprava pre OCR"
+                }
+            ],
+            [
+                {
+                    "arg": ["-modulate", "130,90"],
+                    "valid": true,
+                    "description": "brightness +30% saturation -10%"
+                }, {
+                    "arg": ["-auto-level"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-median", "3", "-gaussian-blur", "2x0.5"],
+                    "valid": true,
+                    "description": "odstranenie odlesku"
+                }, {
+                    "arg": ["-threshold", "20000"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-colorspace", "Gray"],
+                    "valid": true,
+                    "description": "sede odtiene"
+                }, {
+                    "arg": ["-negate"],
+                    "valid": true,
+                    "description": "negativ"
+                }, {
+                    "arg": ["-median", "6"],
+                    "valid": true,
+                    "description": "vyhladeni median"
+                }, {
+                    "arg": ["-colorspace", "gray", "-density", "300", "-sigmoidal-contrast", "3,0%", "-depth", "8"],
+                    "valid": true,
+                    "description": "finalna uprava pre OCR"
+                }
+            ],
+            [
+                {
+                    "arg": ["-modulate", "140,110"],
+                    "valid": true,
+                    "description": "brightness +40% saturation +10%"
+                }, {
+                    "arg": ["-auto-level"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-median", "3", "-gaussian-blur", "2x0.5"],
+                    "valid": true,
+                    "description": "odstranenie odlesku"
+                }, {
+                    "arg": ["-threshold", "20000"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-colorspace", "Gray"],
+                    "valid": true,
+                    "description": "sede odtiene"
+                }, {
+                    "arg": ["-negate"],
+                    "valid": true,
+                    "description": "negativ"
+                }, {
+                    "arg": ["-median", "6"],
+                    "valid": true,
+                    "description": "vyhladeni median"
+                }, {
+                    "arg": ["-colorspace", "gray", "-density", "300", "-sigmoidal-contrast", "3,0%", "-depth", "8"],
+                    "valid": true,
+                    "description": "finalna uprava pre OCR"
+                }
+            ],
+            [
+                {
+                    "arg": ["-modulate", "80,90"],
+                    "valid": false,
+                    "description": "brightness -20% saturation -10%"
+                }, {
+                    "arg": ["-auto-level"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-median", "3", "-gaussian-blur", "2x0.5"],
+                    "valid": true,
+                    "description": "odstranenie odlesku"
+                }, {
+                    "arg": ["-threshold", "20000"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-colorspace", "Gray"],
+                    "valid": true,
+                    "description": "sede odtiene"
+                }, {
+                    "arg": ["-negate"],
+                    "valid": true,
+                    "description": "negativ"
+                }, {
+                    "arg": ["-median", "6"],
+                    "valid": true,
+                    "description": "vyhladeni median"
+                }, {
+                    "arg": ["-colorspace", "gray", "-density", "300", "-sigmoidal-contrast", "3,0%", "-depth", "8"],
+                    "valid": true,
+                    "description": "finalna uprava pre OCR"
+                }
+            ],
+            [
+                {
+                    "arg": ["-modulate", "160,90"],
+                    "valid": true,
+                    "description": "brightness +60% saturation -10%"
+                }, {
+                    "arg": ["-auto-level"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-median", "3", "-gaussian-blur", "2x0.5"],
+                    "valid": true,
+                    "description": "odstranenie odlesku"
+                }, {
+                    "arg": ["-threshold", "20000"],
+                    "valid": true,
+                    "description": "auto korekcia"
+                }, {
+                    "arg": ["-colorspace", "Gray"],
+                    "valid": true,
+                    "description": "sede odtiene"
+                }, {
+                    "arg": ["-negate"],
+                    "valid": true,
+                    "description": "negativ"
+                }, {
+                    "arg": ["-median", "6"],
+                    "valid": true,
+                    "description": "vyhladeni median"
+                }, {
+                    "arg": ["-colorspace", "gray", "-density", "300", "-sigmoidal-contrast", "3,0%", "-depth", "8"],
+                    "valid": true,
+                    "description": "finalna uprava pre OCR"
+                }
+            ]
+        ]
+    }
+}

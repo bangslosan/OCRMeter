@@ -1,0 +1,35 @@
+<% if(logs.length>0){ %>
+<h3>App log:</h3>
+<table class="table table-condensed table-hover">
+	<thead>
+		<tr>
+			<th>Severity</th>
+			<th style="width: 120px;">Time</th>
+			<th>Message</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% logs.forEach(function(l){ %>
+		<% 
+		   klass=l.level; 
+		   klass=(klass=='error')?'important':klass;
+		   klass=(klass=='warn')?'warning':klass;
+		   klass=(klass=='debug')?'inverse':klass;
+		   klass=(klass=='info')?'info':klass;
+		   message=l.level; 
+		   message=(message=='warn')?'warning':message;
+		%>
+		<tr>
+			<td><span class="label label-<%= klass %>"><%= message %></span></td>
+			<td><small><%= l.date %> <%= l.time %></small></td>
+			<td><small><%= l.message %></small></td>
+		</tr>
+		<% }) %>
+	</tbody>
+</table>
+<% }else{ %>
+<div class="jumbotron">
+	<h3>App log: Something went wrong...</h3>
+</div>
+<% } %>
+ 

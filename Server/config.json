@@ -1,0 +1,25 @@
+{
+    "server": {
+        "version": "0.1.0",
+        "http": {
+            "port": 9000,
+            "portAdmin": 9090
+        },
+        "debug": true,
+        "imagemagick": {
+            "bin": {
+                "identify": "identify",
+                "convert": "convert"
+            }
+        },
+        "tesseract": {
+            "bin": "tesseract"
+        },
+        "log": {
+            "app": "/log/app.log",
+            "access": "/log/access.log",
+            "level": "debug",
+            "fileSize": 10
+        }
+    }
+}
