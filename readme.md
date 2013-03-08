@@ -1,7 +1,7 @@
 OCRMeter
 =======
 
-Digits parsing mobile solution for getting values from gas, electricity (...) meters based on Titanium Appcelerator, node.js, tesseract-ocr and imagemagick.
+Digits parsing mobile solution for getting numbers from gas, electricity (...) meters based on Titanium Appcelerator, node.js, tesseract-ocr and imagemagick.
 [More info](http://lab.ejci.net/OCRMeter)
 
 ##License
